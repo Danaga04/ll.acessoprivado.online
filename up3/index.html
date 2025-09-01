@@ -127,18 +127,33 @@
     <p><strong>RECUPERE MENSAGENS APAGADAS!</strong></p>
     <p><strong>Já imaginou poder acessar as mensagens que seu parceiro apagou? Agora você pode com nossa função exclusiva que permite recuperar mensagens deletadas de até 6 meses atrás!</strong></p>
 
-    <div class="price-circle">R$ 47,00</div>
+    <div class="price-circle">R$ 257,00</div>
 
-    <!-- HOTMART - Sales Funnel Widget -->
-    <!--- sales funnel container --->
-    <div id="hotmart-sales-funnel"></div>
-
-    <!--- script load and setup --->
-    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+   <script src="https://cdn.lastlink.com/upsell.min.js"></script>
     <script>
-      checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
-    </script>
-    <!-- HOTMART - Sales Funnel Widget -->
+    var upsellRedirect = "https://ll.acessoprivado.online/up4/";
+
+    function setupDenyButtons() {
+        document.querySelectorAll('[id^="denyButton"]').forEach(button => {
+            button.onclick = function() {
+                const currentUrl = new URL(window.location.href);
+                const newUrl = new URL("https://ll.acessoprivado.online/up4/");
+
+                currentUrl.searchParams.forEach((value, key) => {
+                    newUrl.searchParams.append(key, value);
+                });
+
+                window.location.href = newUrl.toString();
+            };
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupDenyButtons);
+    } else {
+        setupDenyButtons();
+    }
+    </script><div style="font-family: DM Sans; display: flex; flex-direction: column; gap: 24px; align-items: center; cursor: pointer;"><div class="button-default button-accept w-full" style="padding: 17px 32px; line-height: 22px; border-radius: 12px; font-weight: 700 !important; background-color: rgb(52, 226, 60); color: rgb(0, 0, 0);" id="llupsell-C0FF7D01F-1"> RECUPERAR MENSAGENS APAGADAS </div><div class="button-default button-deny w-full" style="text-decoration: underline; line-height: 22px; font-size: 16px; font-weight: 700 !important; color: rgb(0, 0, 0);" id="denyButtonb467b74"> não quero recuperar mensagens apagadas </div></div>
 
     <!-- AVISO DE REINTENTO -->
     <p style="font-size: 14px; color: #555; margin-top: 10px;">
