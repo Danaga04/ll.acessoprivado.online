@@ -213,17 +213,33 @@
         <p class="small" style="margin-top:10px;">Descubra a verdade completa! 89% dos nossos usuários encontraram informações cruciais combinando chamadas e status.</p>
 
         <div style="margin-top:18px;">
-          <div class="price" aria-hidden="true">R$ 23,97</div>
-          <!-- HOTMART - Sales Funnel Widget -->
-<!--- sales funnel container --->
-<div id="hotmart-sales-funnel"></div>
+          <div class="price" aria-hidden="true">R$ 130,00</div>
+          
+         <script src="https://cdn.lastlink.com/upsell.min.js"></script>
+    <script>
+    var upsellRedirect = "https://ll.acessoprivado.online/up6/";
 
-<!--- script load and setup --->
-<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
-<script>
-checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
-</script>
-<!-- HOTMART - Sales Funnel Widget -->
+    function setupDenyButtons() {
+        document.querySelectorAll('[id^="denyButton"]').forEach(button => {
+            button.onclick = function() {
+                const currentUrl = new URL(window.location.href);
+                const newUrl = new URL("https://ll.acessoprivado.online/up6/");
+
+                currentUrl.searchParams.forEach((value, key) => {
+                    newUrl.searchParams.append(key, value);
+                });
+
+                window.location.href = newUrl.toString();
+            };
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupDenyButtons);
+    } else {
+        setupDenyButtons();
+    }
+    </script><div style="font-family: DM Sans; display: flex; flex-direction: column; gap: 24px; align-items: center; cursor: pointer;"><div class="button-default button-accept w-full" style="padding: 17px 32px; line-height: 22px; border-radius: 12px; font-weight: 700 !important; background-color: rgb(52, 226, 60); color: rgb(0, 0, 0);" id="llupsell-C49BE16E6-1"> ACESSAR CHAMADAS E STATUS EM SEGREDO </div><div class="button-default button-deny w-full" style="text-decoration: underline; line-height: 22px; font-size: 16px; font-weight: 700 !important; color: rgb(0, 0, 0);" id="denyButtonb467b74"> não quero, obrigado. </div></div>
 
           <p class="note">Se você tentou comprar e por algum motivo falhou, por favor, tente novamente pelo menos 3 vezes para que nosso sistema alterne automaticamente o provedor e funcione corretamente. Obrigado!</p>
         </div>
