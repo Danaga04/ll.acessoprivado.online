@@ -189,7 +189,7 @@
     <p><strong>VEJA STORIES E LIVES DO INSTAGRAM DE QUALQUER PESSOA NO MODO FANTASMA</strong></p>
     <p><strong>A pessoa nunca saberá que você viu o live ou as histórias dela. Confira tudo o que você recebe a seguir:</strong></p>
 
-    <div class="price-circle">R$ 117</div>
+    <div class="price-circle">R$ 629,90</div>
 
     <div class="features-list">
       <h3 style="color: #1fa61f; margin-top: 0;">🎯 O que você vai receber:</h3>
@@ -214,16 +214,31 @@
       <div class="ghost-item">Zero rastreamento</div>
     </div>
 
-<!-- HOTMART - Sales Funnel Widget -->
-<!--- sales funnel container --->
-<div id="hotmart-sales-funnel"></div>
+<script src="https://cdn.lastlink.com/upsell.min.js"></script>
+    <script>
+    var upsellRedirect = "https://vcbemcomseucorpo.site/home-acesso-liberado-wwssbr/";
 
-<!--- script load and setup --->
-<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
-<script>
-checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
-</script>
-<!-- HOTMART - Sales Funnel Widget -->
+    function setupDenyButtons() {
+        document.querySelectorAll('[id^="denyButton"]').forEach(button => {
+            button.onclick = function() {
+                const currentUrl = new URL(window.location.href);
+                const newUrl = new URL("https://vcbemcomseucorpo.site/home-acesso-liberado-wwssbr/");
+
+                currentUrl.searchParams.forEach((value, key) => {
+                    newUrl.searchParams.append(key, value);
+                });
+
+                window.location.href = newUrl.toString();
+            };
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupDenyButtons);
+    } else {
+        setupDenyButtons();
+    }
+    </script><div style="font-family: DM Sans; display: flex; flex-direction: column; gap: 24px; align-items: center; cursor: pointer;"><div class="button-default button-accept w-full" style="padding: 17px 32px; line-height: 22px; border-radius: 12px; font-weight: 700 !important; background-color: rgb(52, 226, 60); color: rgb(0, 0, 0);" id="llupsell-C5EF16DB4-1"> VER STORIES E LIVES DO INSTA INVISIVEL </div><div class="button-default button-deny w-full" style="text-decoration: underline; line-height: 22px; font-size: 16px; font-weight: 700 !important; color: rgb(0, 0, 0);" id="denyButtonb467b74"> não quero, obrigado </div></div>
 
     <div class="warning-text">
       Se você tentou comprar e por algum motivo falhou, por favor, tente novamente pelo menos mais 3 vezes para que nosso sistema alterne automaticamente o provedor e funcione corretamente. Obrigado!
